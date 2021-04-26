@@ -1,0 +1,82 @@
+package martcon;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class MartCust {
+	
+	public Scanner scanner = new Scanner(System.in);
+	public int inputInt() {return scanner.nextInt();}
+	public String inputStr() {return scanner.next();}
+
+	public static void main(String[] args) throws Exception{
+
+		MartCust mc = new MartCust();
+		mc.menu();
+		
+	}
+	
+	public void menu() throws Exception {
+		
+		System.out.println("\n MartCon");
+		System.out.println("==============================");
+		System.out.println("[1] 회원 가입");
+		System.out.println("[2] 구매");
+		System.out.println("==============================");
+		System.out.println("Select Menu : ");
+		
+		int selecNo = inputInt();
+		
+		switch(selecNo) {
+    	case 1:
+    		System.out.println("회원 가입");
+    		addCust();
+    		break;
+    	case 2:
+    		System.out.println("구매");
+ //   		buygds();
+    		break;
+    	case 6:
+    		System.out.println("프로그램을 종료합니다.");
+    		System.exit(0);
+    		break;
+		}
+		menu();
+	}
+	public void addCust() throws Exception {
+	
+		System.out.print("\nID를 입력하세요: ");
+		String mshp_id = inputStr();
+		String mshp_pw = null, mshp_pw2 = null;
+		boolean result = searchId(mshp_id);
+		if(result) {
+			System.out.println("이미 가입된 계정 입니다.");
+		}else {
+			do {
+				System.out.print("PW를 입력하세요: ");
+				mshp_pw = inputStr();
+				System.out.print("PW를 재입력하세요: ");
+				mshp_pw2 = inputStr();
+			}while(!mshp_pw.equals(mshp_pw2));
+
+		}
+
+		System.out.print("이름을 입력하세요: ");
+		String mshp_name = inputStr();
+		
+		Buyer mc = new Buyer();
+		
+		mc.setMshp_id(mshp_id);
+		mc.setMshp_pw(mshp_pw);
+		mc.setMshp_name(mshp_name);
+		insertMC(mc);
+	}
+	private boolean searchId(String mshp_id) throws Exception {
+
+		
+		
+		return false;
+	}
+}
