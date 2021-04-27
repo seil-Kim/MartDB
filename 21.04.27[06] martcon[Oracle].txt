@@ -1,0 +1,61 @@
+drop table TR_BUYER;
+drop table TR_GDS;
+drop table TR_LIST;
+drop table TR_GDSLIST;
+
+create table TR_BUYER(
+    Mshp_id varchar2(20) not null,
+    Mshp_pw varchar2(20) not null,
+    Mshp_name varchar2(20) not null
+);
+
+select * from TR_BUYER;
+
+commit;
+
+create table TR_GDS(
+    Gds_cd varchar2(20) not null,
+    Gds_nm varchar(100) not null,
+    Sale_amt number not null,
+    Gds_cnt number not null,
+    Reg_dt date
+);
+
+insert into TR_GDS
+values('0001','꼬깔콘','1000', '150', '21/04/26');
+insert into TR_GDS
+values('0002','포카칩','1500', '200', '21/04/26');
+insert into TR_GDS
+values('0003','꼬북칩','800', '100', '21/04/26');
+insert into TR_GDS
+values('0004','월드콘','1200', '300', '21/04/26');
+insert into TR_GDS
+values('0005','옥동자','700', '180', '21/04/26');
+insert into TR_GDS
+values('0006','마늘','2000', '50', '21/04/26');
+insert into TR_GDS
+values('0007','파','1500', '30', '21/04/26');
+
+
+select * from TR_GDS;
+
+create table TR_LIST(
+    Dt varchar2(8) not null,
+    Str_cd varchar2(20) not null,
+    Pos_no varchar2(2) not null,
+    Tr_no varchar2(4) not null,
+    Mshp_id varchar2(20) not null,
+    Sale_kind_tp varchar2(2) not null,
+    constraint PK_Str_cd primary key (Str_cd)
+);
+
+create table TR_GDSLIST(
+    Mshp_id varchar2(20) not null,
+    Gds_nm varchar(100) not null,
+    Gds_buycnt number not null
+);
+
+select * from TR_BUYER;
+select * from TR_GDS;
+select * from TR_LIST;
+select * from TR_GDSLIST;
