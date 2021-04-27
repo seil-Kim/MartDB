@@ -1,0 +1,27 @@
+package martcon;
+
+public class TR_BUYER {
+	
+	private String Mshp_id;
+	private String Mshp_pw;
+	private String Mshp_name;
+	
+	public String getMshp_id() {
+		return Mshp_id;
+	}
+	public void setMshp_id(String mshp_id) {
+		Mshp_id = mshp_id;
+	}
+	public String getMshp_pw() {
+		return Mshp_pw;
+	}
+	public void setMshp_pw(String mshp_pw) {
+		Mshp_pw = mshp_pw;
+	}
+	public String getMshp_name() {
+		return Mshp_name;
+	}
+	public void setMshp_name(String mshp_name) {
+		Mshp_name = mshp_name;
+	}
+}
